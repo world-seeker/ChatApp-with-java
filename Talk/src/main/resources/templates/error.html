@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <nav>
+        <div>
+            <b>..Talk.. </b>
+        </div>
+        <ul>
+			 <li><a th:href="@{/login}"><b>Login</b></a></li>
+            <li><a th:href="@{/registration}"><b>Register</b></a></li>
+        </ul>
+    </nav>
+    
+    <div class="error-container">
+        <h1>Error</h1>
+        
+        <!-- Display detailed error information -->
+        <p>Status Code: <span th:text="${status}"></span></p>
+        <p>Error: <span th:text="${error}"></span></p>
+        <p>Message: <span th:text="${message}"></span></p>
+        
+        <!-- Display stack trace if available -->
+        <div th:if="${stackTrace}">
+            <h2>Stack Trace:</h2>
+            <pre><code th:text="${stackTrace}"></code></pre>
+        </div>
+        
+        <!-- Add more specific error messages as needed -->
+        <p th:if="${status == 404}">The page you are looking for does not exist.</p>
+        <p th:if="${status == 500}">An internal server error occurred.</p>
+         <p th:if="${status == 403}">Unauthorized Request </p>
+        
+        <!-- Add any additional error attributes you want to display -->
+    </div>
+    
+    <!-- Add any other content or sections as needed -->
+
+    <footer>
+        <p>All Rights Reserved @2023</p>
+    </footer>
+</body>
+</html>
