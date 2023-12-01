@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{../css/admin-dashboard.css}">
+</head>
+<body>
+
+<!-- Admin Dashboard -->
+<div class="header">
+    <h1>Admin Dashboard</h1>
+</div>
+
+
+<div class="sidebar">
+   	  <span sec:authorize="isAuthenticated">
+		  <a class="logout" th:href="@{/logout}">
+			  Logout
+		  </a>
+	  </span>
+
+</div>
+
+<div class="content">
+  <h2>Welcome, [[${user != null ? user.getFullname() : 'Admin'}]]  </h2>
+    <table>
+		<caption>List Of User's</caption>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.getFullname()}"></td>
+                <td th:text="${user.getEmail()}"></td>
+                <td th:text="${user.getRole()}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2023 Admin Dashboard</p>
+</footer>
+
+</body>
+</html>

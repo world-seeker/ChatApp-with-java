@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+   <link rel="stylesheet" th:href="@{../css/styles.css}">
+</head>
+<body>
+	
+	<nav>
+		<div>
+			<b>..Talk.. </b>
+		</div>
+		<ul>
+			
+			<li><a th:href="@{/login}"><b>Login</b></a></li>
+		</ul>
+	</nav>
+	
+	
+	
+	
+	
+      <div class="message" th:if="${message != null}">
+	   [[${message}]]
+	
+      </div>
+  <div id="registration-form">
+    <h2>Registration Form</h2>
+    <form id="form"
+      th:action="@{/registration}"
+      method="post"
+      role="form"
+      th:object="${user}"
+     >
+        <label for="fulllname">Full Name:</label>
+        <input th:field="*{fullname}" type="text" id="fullname" name="fullname" placeholder="Enter Your FUllname" required>
+
+        <label for="email">Email:</label>
+        <input th:field="*{email}" type="email" id="email" name="email" placeholder="Enter your Email" required>
+
+        <label for="password">Password:</label>
+        <input th:field="*{password}" type="password" id="password" name="password" placeholder="Enter your Password" required>
+
+        <input type="submit" value="Register"/>
+    </form>
+    <p>Already have a account ? <a th:href="@{/login}">Login</a></p>
+  </div>
+
+</body>
+<footer>
+	<p>
+		All Rights Reserved @2023
+	</p>
+</footer>
+
+</html>

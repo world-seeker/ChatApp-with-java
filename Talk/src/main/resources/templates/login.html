@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+   <link rel="stylesheet" th:href="@{../css/styles.css}">
+   
+</head>
+<body>
+		<nav>
+		<div>
+			<b>..Talk.. </b>
+		</div>
+		<ul>
+			
+			<li><a th:href="@{/registration}"><b>Register</b></a></li>
+		</ul>
+	</nav>
+	
+    
+     <div id="registration-form">
+	    <div class="message" th:if="${param.error}">
+         <meta http-equiv="refresh" content="10;url=/login?error=true"/>
+	     invalid Username or Password
+         </div>
+        <div class="message" th:if="${param.logout}">
+	     <meta http-equiv="refresh" content="10;url=/login?error=true"/>
+	    Logged Out Successfully
+        </div>
+  
+       <h2>Login</h2>
+     
+      <form id="form"
+       th:action="@{/login}"
+       method="post"
+       >
+        <label for="username">Email:</label>
+        <input type="email" id="username" name="username" placeholder="Enter your Email" required>
+
+        <label for="password">Password:</label>
+        <input  type="password" id="password" name="password" placeholder="Enter your Password" required>
+
+        <input type="submit" value="Login"/>
+        
+ 
+      </form>
+      <p>Don't have a account yet ? <a th:href="@{/registration}">Register Now</a></p>
+    </div>
+</body>
+<footer>
+	<p>
+		All Rights Reserved @2023
+	</p>
+</footer>
+</html>

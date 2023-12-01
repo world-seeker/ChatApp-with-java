@@ -1,0 +1,101 @@
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #0e2433;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #registration-form {
+            background-color: #45b6fe;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #registration-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #registration-form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        #registration-form button {
+            background-color: #0e2433;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+       
+        nav {
+			display: flex;
+			justify-content:space-between;
+		    align-items: center;
+            background-image: -moz-linear-gradient(90deg,#0e2433,black);
+            color: #fff;
+           
+            position: absolute;
+            top:0px;
+            width: 100%; /* Take up full width */
+         }
+         
+         nav div{
+			 font-size: 28px;
+			 color: white;
+			 text-decoration: underline;
+		 }
+
+        nav ul {
+            list-style: none;
+            padding: 10px;
+            margin: 9px;
+            
+          }
+
+          nav li {
+               display: inline;
+              margin-right: 10px;
+              cursor: pointer;
+              }
+           
+          li a{
+			  color: white;
+			  text-decoration: none;
+		  } 
+              
+         footer{
+			 background-image: -moz-linear-gradient(90deg,#0e2433,black);
+			 transform: rotate(0.5turn);
+			 width: 100%;
+			 position: fixed;
+			 bottom: 0%;
+			
+		 }
+		 footer p{
+			 transform: rotate(0.5turn);
+			 padding: 10px;
+			 color: white;
+		 }
+      
+           
+        
+        .message {
+              text-align: center;
+              padding: 10px;
+              display: block;
+              color: #fff;
+              background-color: #f00; /* Red background color for error messages */
+              border-radius: 5px;
+            }
