@@ -1,6 +1,6 @@
 # ChatApp-with-java
 
-###Tech-Stack
+<h2>Tech-Stack<h2>
 <ol>
   <li><b>Java Springboot</b></li>
   <li><b>MySQl</b></li>
